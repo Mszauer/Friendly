@@ -26,7 +26,9 @@ namespace AuthController
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody]UserForRegisterDto userForRegisterDto)
         {
-            userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
+            if (!string.IsNullOrEmpty(userForRegisterDto.Username)) {
+                userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
+            }
             if (await _repo.UserExists(userForRegisterDto.Username)){
                 ModelState.AddModelError(userForRegisterDto.Username, "Username already exists");
             }
@@ -47,6 +49,7 @@ namespace AuthController
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody]UserForLoginDto userForLoginDto)
         {
+            throw new Exception("The computer says no!");
             //Retrieve user from DB
             var user = await _repo.LoginAsync(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
             if(user == null) {
