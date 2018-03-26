@@ -49,7 +49,6 @@ namespace AuthController
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody]UserForLoginDto userForLoginDto)
         {
-            throw new Exception("The computer says no!");
             //Retrieve user from DB
             var user = await _repo.LoginAsync(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
             if(user == null) {
