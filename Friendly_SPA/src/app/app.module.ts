@@ -8,6 +8,11 @@ import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertifyService } from './_services/alertify.service';
+import { MemberListComponent } from './memberList/memberList.component';
+import { ListsComponent } from './lists/lists.component';
+import { MessagesComponent } from './messages/messages.component';
+import { Router, RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
 
 
 @NgModule({
@@ -15,12 +20,16 @@ import { AlertifyService } from './_services/alertify.service';
     AppComponent,
     NavComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    MemberListComponent,
+    ListsComponent,
+    MessagesComponent
 ],
   imports: [
     BrowserModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     AuthService,
