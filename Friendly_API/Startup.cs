@@ -42,6 +42,7 @@ namespace Friendly
       services.AddMvc();
       services.AddCors();
       services.AddScoped<IAuthRepository, AuthRepository>();
+      services.AddScoped<IFriendRepository, FriendRepository>();
       services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         .AddJwtBearer(options => {
           options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
@@ -52,6 +53,9 @@ namespace Friendly
             ValidateAudience = false,
           };
         });
+      services.AddMvc().AddJsonOptions( opt => {
+        opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+      });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

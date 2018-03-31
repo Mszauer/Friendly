@@ -9,7 +9,7 @@ using System.Security.Claims;
 using System;
 using Microsoft.Extensions.Configuration;
 
-namespace AuthController
+namespace Friendly.Controllers
 {
     [Route("api/[controller]")]
     public class AuthController : Controller
