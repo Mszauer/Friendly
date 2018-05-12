@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Friendly.Data;
 using Friendly.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -40,6 +41,7 @@ namespace Friendly
         );
       services.AddTransient<Seed>();
       services.AddMvc();
+      services.AddAutoMapper();
       services.AddCors();
       services.AddScoped<IAuthRepository, AuthRepository>();
       services.AddScoped<IFriendRepository, FriendRepository>();
