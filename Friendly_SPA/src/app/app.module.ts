@@ -8,13 +8,14 @@ import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertifyService } from './_services/alertify.service';
-import { MemberListComponent } from './memberList/memberList.component';
+import { MemberListComponent } from './members/memberList/memberList.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { Router, RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
 import { UserService } from './_services/User.service';
+import { MemberCardComponent } from './members/memberCard/memberCard.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { UserService } from './_services/User.service';
     RegisterComponent,
     MemberListComponent,
     ListsComponent,
-    MessagesComponent
+    MessagesComponent,
+    MemberCardComponent
 ],
   imports: [
     BrowserModule,
