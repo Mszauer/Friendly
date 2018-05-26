@@ -1,7 +1,7 @@
-.panel-body {
+.card-body {
     padding: 5px;
 }
-.panel-body img {
+.card-body img {
     width: 100%;
 }
 h5 {
@@ -21,13 +21,13 @@ img {
     transition-duration: 500ms;
     transition-timing-function: ease-out;
 }
-.panel:hover img{
+.card:hover img{
     transform: scale(1.2,1.2);
     transition-duration: 500ms;
     transition-timing-function: ease-out;
     opacity: 0.7;
 }
-.panel-image {
+.card-image {
     overflow: hidden;
     position: relative;
 }
@@ -40,7 +40,7 @@ img {
     margin-left: auto;
     opacity: 0;
 }
-.panel:hover .member-icons {
+.card:hover .member-icons {
     bottom: 0;
     opacity: 1;
 }
